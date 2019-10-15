@@ -1,0 +1,18 @@
+keytool -genkeypair -keystore tangguo11.keystore -alias release -validity 30000
+
+https://www.jb51.net/article/141954.htm
+https://blog.csdn.net/u010889616/article/details/78198822
+
+1.解包:
+apktool.bat d tangguo1.apk
+
+2.修改manifest文件
+
+3.打包:
+apktool.bat b tangguo1
+
+4.重签名:
+apksigner sign --ks tangguo11.keystore tangguo1.apk
+
+5.验证:
+apksigner verify -v --print-certs xxx.apk
